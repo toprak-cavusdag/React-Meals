@@ -7,7 +7,7 @@ const Cart = (props) => {
     (items, index) => <li key={index}>{items.name}</li>
   );
   return (
-    <Modal>
+    <Modal onClose={props.onCloseCart}>
       <ul className='cart-items'>{cartItems}</ul>
       <div className='total'>
         <span>Total Amount</span>
@@ -15,8 +15,12 @@ const Cart = (props) => {
       </div>
 
       <div className='actions'>
-        <button className='button--alt'>Close</button>
-        <button className='button'>Order</button>
+        <button className='button--alt' onClick={props.onCloseCart}>
+          Close
+        </button>
+        <button className='button' onClick={props.onCloseCart}>
+          Order
+        </button>
       </div>
     </Modal>
   );
